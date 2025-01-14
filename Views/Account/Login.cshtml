@@ -1,0 +1,45 @@
+﻿@using Imtahan_Sim_2.ViewModels.Account
+    @model LoginVm
+<!-- Start Login Register Area -->
+<div class="htc__login__register bg__white ptb--130" style="background: rgba(0, 0, 0, 0) url(images/bg/5.jpg) no-repeat scroll center center / cover ;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <ul class="login__register__menu nav justify-contend-center" role="tablist">
+                    <li role="presentation" class="login active"><a class="active" href="#login" role="tab" data-bs-toggle="tab">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Start Login Register Content -->
+        <div class="row tab-content justify-content-center">
+            <div class="col-md-6  ml-auto mr-auto">
+                <div class="htc__login__register__wrap">
+                    <!-- Start Single Content -->
+
+
+                    <div id="login" role="tabpanel" class="single__tabs__panel tab-pane active">
+                        <form class="login" method="post">
+                            <input asp-for="EmailOrUsername" type="EmailOrUsername" placeholder="Email Or Username*">
+                            <input asp-for="Password" type="Password" placeholder="Password*">
+
+                            <div class="tabs__checkbox">
+                                <input asp-for="Remember" type="checkbox">
+                                <span asp-validation-for="Remember" style="color:red"> Remember me</span>
+
+                                <br />
+                                <span class="forget"><a asp-action="ForgetPassword">Forget Pasword?</a></span>
+                            </div>
+                            <button type="submit" class="htc__login__btn">Login</button>
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                        </form>
+
+
+                        <!-- End Single Content -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Login Register Content -->
+        </div>
+    </div>
+    <!-- End Login Register Area -->

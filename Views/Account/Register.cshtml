@@ -1,0 +1,67 @@
+﻿@using Imtahan_Sim_2.ViewModels.Account
+    @model RegisterVm
+
+<!-- Start Login Register Area -->
+<div class="htc__login__register bg__white ptb--130" style="background: rgba(0, 0, 0, 0) url(images/bg/5.jpg) no-repeat scroll center center / cover ;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <ul class="login__register__menu nav justify-contend-center" role="tablist">
+
+                    <li role="presentation" class="register"><a href="#register" role="tab" data-bs-toggle="tab">Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Start Login Register Content -->
+        <div class="row tab-content justify-content-center">
+            <div class="col-md-6  ml-auto mr-auto">
+                <div class="htc__login__register__wrap ">
+
+
+                    <!-- Start Single Content -->
+                    <div id="register" role="tabpanel" class="single__tabs__panel tab-pane d-block">
+                        <form class="login" method="post">
+                            <div>
+                                <input asp-for=Name type="text" placeholder="Name*">
+                                <span asp-validation-for="Name" style="color:red"></span>
+                            </div>
+                            <div>
+                                <input asp-for=Surname type="Surname" placeholder="Surname*">
+                                <span asp-validation-for="Surname" style="color:red"></span>
+                            </div>
+                            <div>
+                                <input asp-for=Email type="email" placeholder="Email*">
+                                <span asp-validation-for="Email" style="color:red"></span>
+                            </div>
+                            <div>
+                                <input asp-for=UserName type="UserName" placeholder="UserName*">
+                                <span asp-validation-for="UserName" style="color:red"></span>
+                            </div>
+                            <div>
+                                <input asp-for=Password type="password" placeholder="Password*">
+                                <span asp-validation-for="Password" style="color:red"></span>
+                            </div>
+                            <div>
+                                <input asp-for=ConfirmPassword type="password" placeholder="ConfirmPassword*">
+                                <span asp-validation-for="ConfirmPassword" style="color:red"></span>
+                            </div>
+                            <div class="tabs__checkbox">
+                                <input asp-for="RememberMe" type="checkbox">
+                                <span asp-validation-for="RememberMe" style="color:red"></span>
+                                <span>@Html.DisplayNameFor(model => model.RememberMe)</span>
+                            </div>
+                            <button type="submit" class="htc__login__btn">Register</button>
+                            <div asp-validation-summary="All"></div>
+                        </form>
+
+
+
+                    </div>
+                    <!-- End Single Content -->
+                </div>
+            </div>
+        </div>
+        <!-- End Login Register Content -->
+    </div>
+</div>
+<!-- End Login Register Area -->
